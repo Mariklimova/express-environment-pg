@@ -55,17 +55,6 @@ route.delete('/:id', async (req, res) => {
     }
 })
 
-// route.patch('/:id', async (req, res) => {
-//     try {
-//         const { id } = req.params;
-//         const body = req.body;
-//         const data = await updateSkillOnReq(id,body);
-//         res.status(200).send(data);
-//     } catch (error) {
-//         res.status(400).send(error.message);
-//     }
-// })
-
 route.patch('/:id',IsValidSkill, async (req, res) => {
     try {
         const { id } = req.params;

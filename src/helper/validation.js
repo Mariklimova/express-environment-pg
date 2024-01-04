@@ -1,13 +1,17 @@
-function IsVAlidId(req, res, next) {
+function IsVAlidId(req, _res, next) {
     const { id } = req.params;
-    if (isNaN(id)) throw new Error('')
+    if (isNaN(id)) throw new Error('id not valid')
+   
     next();
 }
 
-function IsValidSkill(req, res, next) {
+function IsValidSkill(req, _res, next) {
     const { label, category, priority } = req.body;
 
 
+    if (typeof (label) != 'string') throw new Error('label not string');
+    if (typeof (category) != 'string') throw new Error('category not string');
+    if (typeof (priority) != 'number') throw new Error('priority not number');
     if (!isNaN(label)) throw new Error('label not valid');
     if (!isNaN(category)) throw new Error('category not valid');
     if (isNaN(priority)) throw new Error('priority not valid');
@@ -15,4 +19,4 @@ function IsValidSkill(req, res, next) {
     next();
 }
 
-module.exports = {IsValidSkill}
+module.exports = { IsValidSkill }

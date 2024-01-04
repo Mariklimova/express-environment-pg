@@ -25,10 +25,6 @@ async function deleteSkill(id) {
     return data
 }
 
-// async function updateSkillOnReq(id,body) {
-//     const data = await updateSkillOnReqDB(id,body);
-//     return data 
-//  }
 
 async function updateSkillOnReq(id,body) {
     const data = await updateSkillOnReqDB(id,body);
